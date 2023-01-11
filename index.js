@@ -87,25 +87,79 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-console.log("This dataset includes " +finances.length+ " months.");
+// Compute number of months
+console.log("This dataset includes " +finances.length+ " months.")
 
-let net = 0;
+// Compute net loss/profit
+let net = 0
 
 for (let i= 0; i < finances.length; i++) {
   net += finances[i][1];
-  console.log("Total net profits/losses = " + net);
+  console.log("Total net profits/losses = " + net)
 }
 
+// Compute average of changes
 let summedChanges = 0;
 
 for(var i = 0; i < finances.length -1; i++){
   for(var j = 1; j < finances.length; j++){
-    summedChanges += (finances[j][1] - finances[i][1]);
-    console.log("Sum of changes:" + summedChanges);
+    summedChanges += (finances[j][1] - finances[i][1])
+    console.log("Sum of changes:" + summedChanges)
   }
 }
 
-console.log("Average change = " +(summedChanges/finances.length));
+console.log("Average change = " +(summedChanges/finances.length))
+
+// Compute all changes
+let allChanges = []
+let change = 0
+
+for(var i = 0; i < finances.length -1; i++){
+  for(var j = 1; j < finances.length; j++){
+    change = (finances[j][1] - finances[i][1])
+    allChanges.push(change)
+  }
+}
+
+// Calculate greatest increase/profit
+positiveChanges = []
+
+for (let i = 0; i < allChanges.length; i++) {
+  if (allChanges[i] > 0 ){
+    positiveChanges.push(allChanges[i])
+  } 
+}
+
+let greatestIncrease = 0
+
+for (let i= 0; i < positiveChanges.length; i++) {
+  if (positiveChanges[i] > positiveChanges[i-1]){
+    greatestIncrease = positiveChanges[i]
+  }
+}
+
+console.log("Greatest increase: " +greatestIncrease)
+
+// Calculate greatest decrease
+
+negativeChanges = []
+
+for (let i = 0; i < allChanges.length; i++) {
+  if (allChanges[i] < 0 ){
+    negativeChanges.push(allChanges[i])
+  } 
+}
+
+let lowestIncrease = 0
+
+for (let i= 0; i < negativeChanges.length; i++) {
+  if (negativeChanges[i] < negativeChanges[i-1]){
+    lowestIncrease = negativeChanges[i]
+  }
+}
+
+console.log("Lowest increase: " +lowestIncrease)
+
 
 
 
