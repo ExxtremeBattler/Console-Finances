@@ -117,48 +117,51 @@ let change = 0
 for(var i = 0; i < finances.length -1; i++){
   for(var j = 1; j < finances.length; j++){
     change = (finances[j][1] - finances[i][1])
-    allChanges.push(change)
+    allChanges.push([change, finances[j][0]])
   }
 }
 
+console.log(allChanges);
 // Calculate greatest increase/profit
-positiveChanges = []
+// positiveChanges = []
 
-for (let i = 0; i < allChanges.length; i++) {
-  if (allChanges[i] > 0 ){
-    positiveChanges.push(allChanges[i])
-  } 
-}
+// for (let i = 0; i < allChanges.length; i++) {
+//   if (allChanges[i][0] > 0 ){
+//     positiveChanges.push(allChanges[i], allChanges[i][1])
+//   } 
+// }
 
-let greatestIncrease = 0
+// console.log(positiveChanges);
 
-for (let i= 0; i < positiveChanges.length; i++) {
-  if (positiveChanges[i] > positiveChanges[i-1]){
-    greatestIncrease = positiveChanges[i]
-  }
-}
+// // let greatestIncrease = 0
 
-console.log("Greatest increase: " +greatestIncrease)
+// // for (let i= 0; i < positiveChanges.length; i++) {
+// //   if (positiveChanges[i] > positiveChanges[i-1]){
+// //     greatestIncrease = positiveChanges[i]
+// //   }
+// // }
 
-// Calculate greatest decrease
+// // console.log("Greatest increase: " +greatestIncrease)
 
-negativeChanges = []
+// // // Calculate greatest decrease
 
-for (let i = 0; i < allChanges.length; i++) {
-  if (allChanges[i] < 0 ){
-    negativeChanges.push(allChanges[i])
-  } 
-}
+// // negativeChanges = []
 
-let lowestIncrease = 0
+// // for (let i = 0; i < allChanges.length; i++) {
+// //   if (allChanges[i] < 0 ){
+// //     negativeChanges.push(allChanges[i])
+// //   } 
+// // }
 
-for (let i= 0; i < negativeChanges.length; i++) {
-  if (negativeChanges[i] < negativeChanges[i-1]){
-    lowestIncrease = negativeChanges[i]
-  }
-}
+// // let lowestIncrease = 0
 
-console.log("Lowest increase: " +lowestIncrease)
+// // for (let i= 0; i < negativeChanges.length; i++) {
+// //   if (negativeChanges[i] < negativeChanges[i-1]){
+// //     lowestIncrease = negativeChanges[i]
+// //   }
+// // }
+
+// // console.log("Lowest increase: " +lowestIncrease)
 
 
 
