@@ -87,16 +87,21 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+
+console.log("Financial Analaysis")
+console.log("-------------------------------------------------")
+
 // Compute number of months
-console.log("This dataset includes " +finances.length+ " months.")
+console.log("Total months: " +finances.length)
 
 // Compute net loss/profit
 let net = 0
 
 for (let i= 0; i < finances.length; i++) {
   net += finances[i][1];
-  console.log("Total net profits/losses = " + net)
 }
+
+console.log("Total net profits/losses = " + Math.ceil(net/100) * 100)
 
 // Compute average of changes
 let summedChanges = 0;
@@ -104,11 +109,12 @@ let summedChanges = 0;
 for(var i = 0; i < finances.length -1; i++){
   for(var j = 1; j < finances.length; j++){
     summedChanges += (finances[j][1] - finances[i][1])
-    console.log("Sum of changes:" + summedChanges)
   }
 }
 
-console.log("Average change = " +(summedChanges/finances.length))
+summedChanges = summedChanges/86
+
+console.log("Average change = " +Math.ceil((summedChanges/finances.length)/100) *100 )
 
 // Compute all changes
 let allChanges = []
