@@ -138,11 +138,6 @@ for (let i = 0; i < allChanges.length; i++) {
   } 
 }
 
-// console.log(positiveChanges);
-// console.log(positiveChanges[8]);
-
-
-
 let greatestIncrease = 0
 
 for (let i= 1; i < positiveChanges.length; i++) {
@@ -153,7 +148,7 @@ for (let i= 1; i < positiveChanges.length; i++) {
 
 console.log("Greatest increase: " +greatestIncrease)
 
-// Calculate greatest decrease
+// Calculate greatest decrease/loss
 
 negativeChanges = []
 
