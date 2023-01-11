@@ -121,47 +121,51 @@ for(var i = 0; i < finances.length -1; i++){
   }
 }
 
-console.log(allChanges);
-// Calculate greatest increase/profit
-// positiveChanges = []
+
+//Calculate greatest increase/profit
+
+positiveChanges = []
+
+for (let i = 0; i < allChanges.length; i++) {
+  if (allChanges[i][0] > 0 ){
+    positiveChanges.push([allChanges[i]])
+  } 
+}
+
+// console.log(positiveChanges);
+// console.log(positiveChanges[8]);
+
+
+
+let greatestIncrease = 0
+
+for (let i= 1; i < positiveChanges.length; i++) {
+  if (positiveChanges[i][0] > positiveChanges[i-1][0]){
+    greatestIncrease = positiveChanges[i]
+  }
+}
+
+console.log("Greatest increase: " +greatestIncrease)
+
+// // Calculate greatest decrease
+
+// negativeChanges = []
 
 // for (let i = 0; i < allChanges.length; i++) {
-//   if (allChanges[i][0] > 0 ){
-//     positiveChanges.push(allChanges[i], allChanges[i][1])
+//   if (allChanges[i] < 0 ){
+//     negativeChanges.push(allChanges[i])
 //   } 
 // }
 
-// console.log(positiveChanges);
+// let lowestIncrease = 0
 
-// // let greatestIncrease = 0
+// for (let i= 0; i < negativeChanges.length; i++) {
+//   if (negativeChanges[i] < negativeChanges[i-1]){
+//     lowestIncrease = negativeChanges[i]
+//   }
+// }
 
-// // for (let i= 0; i < positiveChanges.length; i++) {
-// //   if (positiveChanges[i] > positiveChanges[i-1]){
-// //     greatestIncrease = positiveChanges[i]
-// //   }
-// // }
-
-// // console.log("Greatest increase: " +greatestIncrease)
-
-// // // Calculate greatest decrease
-
-// // negativeChanges = []
-
-// // for (let i = 0; i < allChanges.length; i++) {
-// //   if (allChanges[i] < 0 ){
-// //     negativeChanges.push(allChanges[i])
-// //   } 
-// // }
-
-// // let lowestIncrease = 0
-
-// // for (let i= 0; i < negativeChanges.length; i++) {
-// //   if (negativeChanges[i] < negativeChanges[i-1]){
-// //     lowestIncrease = negativeChanges[i]
-// //   }
-// // }
-
-// // console.log("Lowest increase: " +lowestIncrease)
+// console.log("Lowest increase: " +lowestIncrease)
 
 
 
