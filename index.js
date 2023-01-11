@@ -147,25 +147,25 @@ for (let i= 1; i < positiveChanges.length; i++) {
 
 console.log("Greatest increase: " +greatestIncrease)
 
-// // Calculate greatest decrease
+// Calculate greatest decrease
 
-// negativeChanges = []
+negativeChanges = []
 
-// for (let i = 0; i < allChanges.length; i++) {
-//   if (allChanges[i] < 0 ){
-//     negativeChanges.push(allChanges[i])
-//   } 
-// }
+for (let i = 0; i < allChanges.length; i++) {
+  if (allChanges[i][0] < 0 ){
+    negativeChanges.push(allChanges[i])
+  } 
+}
 
-// let lowestIncrease = 0
+let lowestDecrease = 0
 
-// for (let i= 0; i < negativeChanges.length; i++) {
-//   if (negativeChanges[i] < negativeChanges[i-1]){
-//     lowestIncrease = negativeChanges[i]
-//   }
-// }
+for (let i= 1; i < negativeChanges.length; i++) {
+  if (negativeChanges[i][0] < negativeChanges[i-1][0]){
+    lowestDecrease = negativeChanges[i]
+  }
+}
 
-// console.log("Lowest increase: " +lowestIncrease)
+console.log("Lowest decrease: " +lowestDecrease)
 
 
 
